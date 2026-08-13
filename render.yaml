@@ -4,7 +4,7 @@ services:
     runtime: python
     plan: free
 
-    buildCommand: pip install -r requirements.txt && python manage.py migrate && python manage.py collectstatic --noinput
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
 
     startCommand: gunicorn shivani_lights.wsgi:application
 
@@ -16,4 +16,4 @@ services:
         value: "False"
 
       - key: DATABASE_URL
-        sync: false
+        sync: falsegit add render.yaml
