@@ -4,9 +4,9 @@ services:
     runtime: python
     plan: free
 
-    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput
 
-    startCommand: gunicorn shivani_lights.wsgi:application
+    startCommand: python manage.py migrate && gunicorn shivani_lights.wsgi:application
 
     envVars:
       - key: SECRET_KEY
