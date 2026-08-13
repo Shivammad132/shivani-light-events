@@ -1,0 +1,83 @@
+{% extends 'events/base.html' %}
+
+
+{% block title %}Packages | Shivani Light & Events{% endblock %}
+
+{% block content %}
+<section class="packages-section">
+    <div class="section-heading">
+        <p>
+            SIMPLE & TRANSPARENT
+        </p>
+        <h1>
+            Our <span>Packages</span>
+        </h1>
+        <div class="heading-line"></div>
+        <p class="section-description">
+            Choose a package and customize
+            it according to your event.
+        </p>
+    </div>
+
+    <div class="packages-container">
+
+        {% for package in packages %}
+
+            <div class="package-card
+                {% if package.popular %} popular-package {% endif %}">
+
+                {% if package.popular %}
+                    <div class="popular-badge">
+                        MOST POPULAR
+                    </div>
+
+                {% endif %}
+
+                <h3>
+
+                    {{ package.name }}
+
+                </h3>
+
+                <div class="package-price">
+
+                    ₹{{ package.price }} /-
+
+                    <span>
+                        starting
+                    </span>
+
+                </div>
+
+                <p class="package-description">
+                    {{ package.description }}
+                </p>
+                <div class="package-divider">
+                </div>
+                <ul class="package-features">
+                    {% for feature in package.feature_list %}
+                        <li>
+                            <span>❖</span>
+                            {{ feature }}
+                        </li>
+                    {% endfor %}
+                </ul>
+                <a href="{% url 'booking' %}"
+                   class="package-btn
+                   {% if package.popular %}
+                       package-btn-gold
+                   {% endif %}
+                   ">
+                    Choose Package
+                </a>
+            </div>
+        {% empty %}
+            <p>
+                No packages available.
+            </p>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

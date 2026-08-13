@@ -1,0 +1,36 @@
+{% extends 'events/base.html' %}
+
+{% block title %} Our Services | Shivani Light & Events {% endblock %}
+{% block content %}
+<section class="services-section">
+    <div class="section-heading">
+        <p>
+            WHAT WE DO
+        </p>
+        <h1>
+            Our <span>Services</span>
+        </h1>
+        <div class="heading-line"></div>
+        <p class="section-description">Everything you need to turn your venue into a memorable celebration. </p>
+    </div>
+    <div class="services-container">
+        {% for service in services %}
+            <div class="service-card">
+                <div class="service-icon">
+                    {{ service.icon }}
+                </div>
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.description }}</p>
+
+                <a href="{% url 'booking' %}">
+                    Book This Service →
+                </a>
+            </div>
+        {% empty %}
+            <p>
+                No services available.
+            </p>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

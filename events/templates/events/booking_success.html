@@ -1,0 +1,23 @@
+{% extends 'events/base.html' %}
+
+{% block title %} Booking Received | Shivani Light & Events{% endblock %}
+
+{% block content %}
+
+<section class="booking-success">
+
+    <div class="success-box">
+        <div class="success-icon">
+            ✓
+        </div>
+        <p class="hero-small"> ENQUIRY RECEIVED</p>
+        <h1>Thank You</h1>
+        <p>Your event enquiry has been
+            successfully submitted.</p>
+        <p>Our team will contact you shortly.</p>
+        <a href="{% url 'home' %}" class="btn btn-gold"> Back to Home </a>
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'events/base.html' %}
+{% load static %}
+
+{% block title %}Shivani Light & Events | Home{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="{% static 'events/videos/light.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="hero-small">
+            PREMIUM EVENT DECORATION
+        </p>
+
+        <h1>
+            We Make Your
+            <br>
+            <span>
+                Moments Magical.
+            </span>
+        </h1>
+
+        <p class="hero-description">
+            <b>
+                Premium lighting, elegant stages, LED walls, DJ,
+                and stunning decorations to make every celebration
+                truly memorable.
+            </b>
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="{% url 'booking' %}"
+               class="btn btn-gold">
+                Book Your Event
+            </a>
+
+            <a href="{% url 'services' %}"
+               class="btn btn-outline">
+                Explore Services
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% comment %} {% extends 'events/base.html' %}
+
+{% block title %}Shivani Light & Events | Home{% endblock %}
+
+{% block content %}
+<!-- HERO -->
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-small">
+            PREMIUM EVENT DECORATION
+        </p>
+        <h1>
+            We Make Your
+            <br>
+            <span>
+                Moments Magical.
+            </span>
+        </h1>
+        <p class="hero-description">
+            <b>Premium lighting, elegant stages, LED walls, DJ,
+                and stunning decorations to make every celebration truly memorable.</b>
+        </p>
+        <div class="hero-buttons">
+
+            <a href="{% url 'booking' %}"
+               class="btn btn-gold">
+
+                Book Your Event
+
+            </a>
+            <a href="{% url 'services' %}"
+               class="btn btn-outline">
+
+                Explore Services
+
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %} {% endcomment %}

@@ -1,0 +1,167 @@
+{% extends "events/base.html" %}
+
+{% block title %}
+Help & Support | Shivani Light & Events
+{% endblock %}
+
+{% block content %}
+
+<section class="support-section">
+
+    <div class="support-container">
+
+        <!-- HEADER -->
+        <div class="support-header">
+            <p class="support-small">
+                WE ARE HERE TO HELP
+            </p>
+            <h1>
+                Help & <span>Support</span>
+            </h1>
+            <p>
+                Have a question about booking, packages,
+                decoration or our services?
+                We are here to help you.
+            </p>
+
+        </div>
+
+        <!-- SUPPORT CONTENT -->
+
+        <div class="support-grid">
+
+            <!-- LEFT SIDE -->
+
+            <div class="support-info">
+
+                <div class="support-card">
+
+                    <div class="support-card-icon">
+                        📞
+                    </div>
+
+                    <h3>Call Us</h3>
+                    <p>
+                        Talk directly with our team
+                        for quick assistance.
+                    </p>
+                    <a href="tel:+918090653148">
+                        +91 8090653148
+                    </a>
+
+                </div>
+
+                <div class="support-card">
+
+                    <div class="support-card-icon">
+                        💬
+                    </div>
+                    <h3>WhatsApp</h3>
+
+                    <p>
+                        Chat with us for booking
+                        and event enquiries.
+                    </p>
+
+                    <a
+                        href="https://wa.me/918090653148"
+                        target="_blank"
+                    >
+                        Chat on WhatsApp
+                    </a>
+
+                </div>
+
+                <div class="support-card">
+
+                    <div class="support-card-icon">
+                        ❖
+                    </div>
+
+                    <h3>Booking Assistance</h3>
+
+                    <p>
+                        Need help choosing a package
+                        for your special event?
+                    </p>
+
+                    <a href="{% url 'packages' %}">
+                        View Packages
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE FORM -->
+
+            <div class="support-form-card">
+
+                <h2>
+                    Send Us a Message
+                </h2>
+
+                <p class="form-description">
+                    Fill in the details below and
+                    our team will contact you.
+                </p>
+
+                <form method="POST">
+
+                    {% csrf_token %}
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        {{ form.name }}
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        {{ form.phone }}
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Email Address
+                        </label>
+
+                        {{ form.email }}
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Subject
+                        </label>
+                        {{ form.subject }}
+                    </div>
+                    <div class="form-group">
+
+                        <label>
+                            Your Message
+                        </label>
+
+                        {{ form.message }}
+                    </div>
+
+                    <button type="submit" class="support-submit">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

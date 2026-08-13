@@ -1,0 +1,41 @@
+{% extends 'events/base.html' %}
+
+{% block title %}Gallery | Shivani Light & Events{% endblock %}
+{% block content %}
+<section class="gallery-section">
+    <div class="section-heading">
+        <p>
+            OUR WORK
+        </p>
+
+        <h1>
+            Event <span>Gallery</span>
+        </h1>
+        <div class="heading-line"></div>
+        <p class="section-description">Take a look at some of our beautiful event setups.</p>
+    </div>
+    <div class="gallery-container">
+        {% for image in gallery_images %}
+            <div class="gallery-card">
+                <img
+                    src="{{ image.image.url }}"
+                    alt="{{ image.title }}"
+                >
+                <div class="gallery-overlay">
+                    <span>
+                        {{ image.category }}
+                    </span>
+                    <h3>
+                        {{ image.title }}
+                    </h3>
+                </div>
+            </div>
+        {% empty %}
+            <div class="gallery-empty">
+                <h3>Gallery Coming Soon</h3>
+                <p>Event photos will appear here.</p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

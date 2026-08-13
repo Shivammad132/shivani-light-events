@@ -1,0 +1,95 @@
+{% extends 'events/base.html' %}
+
+
+{% block title %}
+    Testimonials | Shivani Light & Events
+{% endblock %}
+
+
+{% block content %}
+
+<section class="testimonials-section">
+
+    <div class="section-heading">
+        <p>
+            HAPPY CLIENTS
+        </p>
+
+        <h1>
+            What Our <span>Clients Say</span>
+        </h1>
+
+        <div class="heading-line"></div>
+
+        <p class="section-description">
+
+            Real experiences from celebrations
+            we've helped make memorable.
+
+        </p>
+
+    </div>
+
+
+    <div class="testimonials-container">
+
+        {% for testimonial in testimonials %}
+
+            <article class="testimonial-card">
+
+                <div class="testimonial-stars">
+
+                    {% for i in "12345" %}
+
+                        {% if forloop.counter <= testimonial.rating %}
+                            ★
+                        {% else %}
+                            ☆
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+
+                <p class="testimonial-review">
+
+                    "{{ testimonial.review }}"
+
+                </p>
+
+
+                <div class="testimonial-divider">
+                </div>
+
+
+                <h3>
+
+                    {{ testimonial.name }}
+
+                </h3>
+
+
+                <span>
+
+                    {{ testimonial.event_type }}
+
+                </span>
+
+            </article>
+
+        {% empty %}
+
+            <p class="testimonial-empty">
+
+                No testimonials available yet.
+
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
