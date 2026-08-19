@@ -2681,3 +2681,605 @@ body {
     }
 
 }
+/* =========================================================
+   HOME PAGE - NEW SECTIONS
+   SHIVANI LIGHT & EVENTS
+========================================================= */
+
+.home-section {
+    padding: 100px 7%;
+    background: #0b0b0b;
+    scroll-margin-top: 75px;
+}
+
+.home-section:nth-of-type(even) {
+    background: #10100f;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.home-section .section-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.home-section .section-small {
+    margin-bottom: 12px;
+    color: #e8b84f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.home-section .section-heading h2 {
+    margin: 0 0 15px;
+    color: #ffffff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 5vw, 55px);
+    line-height: 1.1;
+}
+
+.home-section .section-heading p:last-child {
+    margin: 0;
+    color: #88837b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.services-grid .service-card {
+    min-height: 230px;
+    padding: 30px 25px;
+
+    background: linear-gradient(
+        145deg,
+        #151412,
+        #0e0e0d
+    );
+
+    border: 1px solid #29251f;
+    border-radius: 12px;
+
+    transition: 0.3s ease;
+}
+
+.services-grid .service-card:hover {
+    transform: translateY(-7px);
+    border-color: #b88e3f;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.services-grid .service-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    background: rgba(232, 184, 79, 0.08);
+    border: 1px solid rgba(232, 184, 79, 0.25);
+    border-radius: 10px;
+
+    color: #e8b84f;
+    font-size: 26px;
+}
+
+.services-grid .service-card h3 {
+    margin-bottom: 10px;
+
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.services-grid .service-card p {
+    margin: 0;
+
+    color: #89847b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   PACKAGES
+========================= */
+
+.packages-section {
+    background:
+        linear-gradient(
+            180deg,
+            #0b0b0b,
+            #10100f
+        );
+}
+
+.packages-grid {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.packages-grid .package-card {
+    position: relative;
+
+    padding: 38px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151412,
+            #0d0d0c
+        );
+
+    border: 1px solid #302b24;
+    border-radius: 14px;
+
+    transition: 0.3s ease;
+}
+
+.packages-grid .package-card:hover {
+    transform: translateY(-7px);
+    border-color: #b99143;
+}
+
+.packages-grid .popular-package {
+    border-color: #d7aa46;
+
+    box-shadow:
+        0 15px 50px rgba(215, 170, 70, 0.08);
+}
+
+.popular-badge {
+    position: absolute;
+
+    top: -12px;
+    right: 22px;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: #e8b84f;
+    color: #111;
+
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.packages-grid .package-card h3 {
+    margin-bottom: 15px;
+
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.package-price {
+    margin-bottom: 12px;
+
+    color: #e8b84f;
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.packages-grid .package-card > p {
+    min-height: 45px;
+
+    margin: 15px 0;
+
+    color: #929087;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.packages-grid .package-features {
+    margin: 20px 0 25px;
+}
+
+.package-feature {
+    padding: 7px 0;
+
+    color: #bbb5aa;
+    font-size: 13px;
+}
+
+.packages-grid .package-card .btn {
+    width: 100%;
+    text-align: center;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.home-gallery-item {
+    position: relative;
+
+    height: 300px;
+
+    overflow: hidden;
+
+    background: #111;
+    border: 1px solid #29251f;
+    border-radius: 12px;
+}
+
+.home-gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.home-gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.home-gallery-item .gallery-overlay {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 55px 20px 18px;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.95)
+        );
+}
+
+.home-gallery-item .gallery-overlay h3 {
+    margin: 5px 0 0;
+
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 19px;
+}
+
+.home-gallery-item .gallery-overlay span {
+    color: #e8b84f;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials-section {
+    background:
+        linear-gradient(
+            180deg,
+            #0b0b0b,
+            #10100f
+        );
+}
+
+.testimonials-grid {
+    max-width: 1150px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.testimonials-grid .testimonial-card {
+    padding: 32px 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #151412,
+            #0d0d0c
+        );
+
+    border: 1px solid #302b24;
+    border-radius: 14px;
+
+    transition: 0.3s ease;
+}
+
+.testimonials-grid .testimonial-card:hover {
+    transform: translateY(-6px);
+    border-color: #b99143;
+}
+
+.testimonial-rating {
+    margin-bottom: 20px;
+
+    color: #e8b84f;
+
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.testimonial-review {
+    min-height: 105px;
+
+    margin: 0;
+
+    color: #aaa49a;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.testimonial-client {
+    margin-top: 22px;
+    padding-top: 20px;
+
+    border-top: 1px solid #2d2923;
+}
+
+.testimonial-client h3 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 18px;
+}
+
+.testimonial-client span {
+    color: #d5a942;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   REVIEW BUTTON
+========================= */
+
+.review-button-wrapper {
+    max-width: 700px;
+    margin: 50px auto 0;
+
+    text-align: center;
+}
+
+.review-button-wrapper p {
+    margin-bottom: 18px;
+
+    color: #88837b;
+    font-size: 14px;
+}
+
+
+/* =========================
+   BOOKING CTA
+========================= */
+
+.home-booking-section {
+    padding: 110px 7%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #17130d 0%,
+            #0b0b0b 55%,
+            #070707 100%
+        );
+
+    border-top: 1px solid #29231a;
+}
+
+.home-booking-content {
+    max-width: 750px;
+    margin: auto;
+}
+
+.home-booking-content .section-small {
+    margin-bottom: 15px;
+
+    color: #e8b84f;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.home-booking-content h2 {
+    margin-bottom: 18px;
+
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: clamp(38px, 5vw, 58px);
+}
+
+.home-booking-content p:not(.section-small) {
+    margin-bottom: 28px;
+
+    color: #88837b;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .packages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .home-section {
+        padding: 70px 5%;
+    }
+
+    .home-section .section-heading {
+        margin-bottom: 38px;
+    }
+
+    .home-section .section-heading h2 {
+        font-size: 38px;
+    }
+
+    .home-section .section-heading p:last-child {
+        font-size: 13px;
+    }
+
+
+    /* Services */
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .services-grid .service-card {
+        min-height: auto;
+        padding: 25px 22px;
+    }
+
+
+    /* Packages */
+
+    .packages-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .packages-grid .package-card {
+        padding: 32px 24px;
+    }
+
+
+    /* Gallery */
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .home-gallery-item {
+        height: 280px;
+    }
+
+
+    /* Testimonials */
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .testimonials-grid .testimonial-card {
+        padding: 27px 22px;
+    }
+
+    .testimonial-review {
+        min-height: auto;
+    }
+
+
+    /* Booking CTA */
+
+    .home-booking-section {
+        padding: 80px 6%;
+    }
+
+    .home-booking-content h2 {
+        font-size: 38px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .home-section {
+        padding: 60px 18px;
+    }
+
+    .home-section .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .home-gallery-item {
+        height: 240px;
+    }
+
+    .home-booking-content h2 {
+        font-size: 32px;
+    }
+
+    .review-button-wrapper .btn {
+        width: 100%;
+    }
+}

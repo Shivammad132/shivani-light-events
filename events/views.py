@@ -3,7 +3,33 @@ from .models import (Service, Package, Booking, GalleryImage, Testimonial, Suppo
 from .forms import SupportRequestForm
 
 def home(request):
-    return render(request, 'events/home.html')
+
+    services = Service.objects.filter(
+        is_active=True
+    )
+
+    packages = Package.objects.filter(
+        is_active=True
+    )
+
+    gallery_images = GalleryImage.objects.filter(
+        is_active=True
+    )
+
+    testimonials = Testimonial.objects.filter(
+        is_active=True
+    ).order_by('-created_at')
+
+    return render(
+        request,
+        'events/home.html',
+        {
+            'services': services,
+            'packages': packages,
+            'gallery_images': gallery_images,
+            'testimonials': testimonials,
+        }
+    )
 
 def services(request):
     services = Service.objects.filter(
