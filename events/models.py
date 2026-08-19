@@ -93,25 +93,20 @@ class Testimonial(models.Model):
     name = models.CharField(
         max_length=100
     )
-
     event_type = models.CharField(
         max_length=100
     )
-
     review = models.TextField()
-
     rating = models.PositiveSmallIntegerField(
         default=5
     )
 
     is_active = models.BooleanField(
-        default=False
+        default=True
     )
-
     created_at = models.DateTimeField(
         auto_now_add=True
     )
-
     def __str__(self):
         return self.name
 

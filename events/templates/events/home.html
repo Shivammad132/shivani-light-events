@@ -5,9 +5,7 @@
 
 {% block content %}
 
-<!-- ================= HERO ================= -->
-
-<section class="hero" id="home">
+<section class="hero">
 
     <video class="hero-video" autoplay muted loop playsinline>
         <source src="{% static 'events/videos/light.mp4' %}" type="video/mp4">
@@ -45,319 +43,54 @@
                 Book Your Event
             </a>
 
-            <a href="#services"
+            <a href="{% url 'services' %}"
                class="btn btn-outline">
                 Explore Services
             </a>
-
         </div>
-
     </div>
-
 </section>
 
+{% endblock %}
 
-<!-- ================= SERVICES ================= -->
+{% comment %} {% extends 'events/base.html' %}
 
-<section class="home-section" id="services">
+{% block title %}Shivani Light & Events | Home{% endblock %}
 
-    <div class="section-heading">
+{% block content %}
+<!-- HERO -->
 
-        <p class="section-small">
-            WHAT WE OFFER
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-small">
+            PREMIUM EVENT DECORATION
         </p>
-
-        <h2>
-            Our Services
-        </h2>
-
-        <p>
-            Everything you need to make your event unforgettable.
+        <h1>
+            We Make Your
+            <br>
+            <span>
+                Moments Magical.
+            </span>
+        </h1>
+        <p class="hero-description">
+            <b>Premium lighting, elegant stages, LED walls, DJ,
+                and stunning decorations to make every celebration truly memorable.</b>
         </p>
-
-    </div>
-
-
-    <div class="services-grid">
-
-        {% for service in services %}
-
-        <div class="service-card">
-
-            <div class="service-icon">
-                {{ service.icon }}
-            </div>
-
-            <h3>
-                {{ service.title }}
-            </h3>
-
-            <p>
-                {{ service.description }}
-            </p>
-
-        </div>
-
-        {% empty %}
-
-        <p>
-            No services available at the moment.
-        </p>
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-
-<!-- ================= PACKAGES ================= -->
-
-<section class="home-section packages-section" id="packages">
-
-    <div class="section-heading">
-
-        <p class="section-small">
-            CHOOSE YOUR PLAN
-        </p>
-
-        <h2>
-            Our Packages
-        </h2>
-
-        <p>
-            Select the perfect package for your special occasion.
-        </p>
-
-    </div>
-
-
-    <div class="packages-grid">
-
-        {% for package in packages %}
-
-        <div class="package-card {% if package.popular %}popular-package{% endif %}">
-
-            {% if package.popular %}
-
-            <div class="popular-badge">
-                MOST POPULAR
-            </div>
-
-            {% endif %}
-
-
-            <h3>
-                {{ package.name }}
-            </h3>
-
-            <div class="package-price">
-                ₹{{ package.price }}
-            </div>
-
-            <p>
-                {{ package.description }}
-            </p>
-
-
-            <div class="package-features">
-
-                {% for feature in package.feature_list %}
-
-                <div class="package-feature">
-                    ✓ {{ feature }}
-                </div>
-
-                {% endfor %}
-
-            </div>
-
+        <div class="hero-buttons">
 
             <a href="{% url 'booking' %}"
                class="btn btn-gold">
-                Book This Package
+
+                Book Your Event
+
             </a>
+            <a href="{% url 'services' %}"
+               class="btn btn-outline">
 
+                Explore Services
+
+            </a>
         </div>
-
-        {% empty %}
-
-        <p>
-            No packages available at the moment.
-        </p>
-
-        {% endfor %}
-
     </div>
-
 </section>
-
-
-<!-- ================= GALLERY ================= -->
-
-<section class="home-section" id="gallery">
-
-    <div class="section-heading">
-
-        <p class="section-small">
-            OUR WORK
-        </p>
-
-        <h2>
-            Event Gallery
-        </h2>
-
-        <p>
-            A glimpse of the celebrations we've helped create.
-        </p>
-
-    </div>
-
-
-    <div class="gallery-grid">
-
-        {% for image in gallery_images %}
-
-        <div class="home-gallery-item">
-
-            <img
-                src="{{ image.image.url }}"
-                alt="{{ image.title }}"
-            >
-
-            <div class="gallery-overlay">
-
-                <h3>
-                    {{ image.title }}
-                </h3>
-
-                <span>
-                    {{ image.category }}
-                </span>
-
-            </div>
-
-        </div>
-
-        {% empty %}
-
-        <p>
-            No gallery images available at the moment.
-        </p>
-
-        {% endfor %}
-
-    </div>
-
-</section>
-
-
-<!-- ================= TESTIMONIALS ================= -->
-
-<section class="home-section testimonials-section" id="reviews">
-
-    <div class="section-heading">
-
-        <p class="section-small">
-            HAPPY CLIENTS
-        </p>
-
-        <h2>
-            What Our Clients Say
-        </h2>
-
-        <p>
-            Real experiences from celebrations we've helped make memorable.
-        </p>
-
-    </div>
-
-
-    <div class="testimonials-grid">
-
-        {% for testimonial in testimonials %}
-
-        <div class="testimonial-card">
-
-            <div class="testimonial-rating">
-
-                {% for star in "12345" %}
-
-                    {% if forloop.counter <= testimonial.rating %}
-                        ★
-                    {% else %}
-                        ☆
-                    {% endif %}
-
-                {% endfor %}
-
-            </div>
-
-
-            <p class="testimonial-review">
-                "{{ testimonial.review }}"
-            </p>
-
-
-            <div class="testimonial-client">
-
-                <h3>
-                    {{ testimonial.name }}
-                </h3>
-
-                <span>
-                    {{ testimonial.event_type }}
-                </span>
-
-            </div>
-
-        </div>
-
-        {% empty %}
-
-        <p>
-            No reviews available yet.
-        </p>
-
-        {% endfor %}
-
-    </div>
-
-
-    <!-- CUSTOMER REVIEW BUTTON -->
-
-
-</section>
-
-
-<!-- ================= BOOKING CTA ================= -->
-
-<section class="home-booking-section">
-
-    <div class="home-booking-content">
-
-        <p class="section-small">
-            READY TO CELEBRATE?
-        </p>
-
-        <h2>
-            Let's Make Your Event Magical.
-        </h2>
-
-        <p>
-            Tell us about your event and we'll take care of the rest.
-        </p>
-
-        <a
-            href="{% url 'booking' %}"
-            class="btn btn-gold"
-        >
-            Book Your Event
-        </a>
-
-    </div>
-
-</section>
-
-
-{% endblock %}
+{% endblock %} {% endcomment %}
