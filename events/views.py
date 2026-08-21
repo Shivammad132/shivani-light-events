@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import (Service, Package, Booking, GalleryImage, Testimonial, SupportRequest)
 from .forms import SupportRequestForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 def home(request):
     return render(request, 'events/home.html')
@@ -35,21 +37,50 @@ def about(request):
 
 def booking(request):
     if request.method == 'POST':
+
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        event_type = request.POST.get('event_type')
+        event_date = request.POST.get('event_date')
+        location = request.POST.get('location')
+        requirements = request.POST.get('requirements')
+
+        # Save booking in database
         Booking.objects.create(
-            name=request.POST.get('name'),
-            phone=request.POST.get('phone'),
-            event_type=request.POST.get(
-                'event_type'
-            ),
-            event_date=request.POST.get(
-                'event_date'
-            ),
-            location=request.POST.get(
-                'location'
-            ),
-            requirements=request.POST.get(
-                'requirements'
-            ),
+            name=name,
+            phone=phone,
+            event_type=event_type,
+            event_date=event_date,
+            location=location,
+            requirements=requirements,
+        )
+
+        # Send booking notification email
+        send_mail(
+            subject='New Event Booking - Shivani Lights & Events',
+
+            message=f"""
+New Event Booking Received
+
+Customer Name: {name}
+Mobile Number: {phone}
+Event Type: {event_type}
+Event Date: {event_date}
+Venue / Location: {location}
+
+Requirements:
+{requirements}
+
+Please contact the customer for further discussion.
+
+Shivani Lights & Events
+""",
+
+            from_email=settings.EMAIL_HOST_USER,
+
+            recipient_list=[settings.EMAIL_HOST_USER],
+
+            fail_silently=False,
         )
 
         return redirect('booking_success')
